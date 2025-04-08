@@ -5,9 +5,7 @@
 export const environment = {
   production: false,
   url: "https://api.themoviedb.org/3",
-  api_key: "923db47c345416d96bce298f0c7d3f47",
-  /*api_key: "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ODdlN2FmZmRhMDdiM2MyZTJjOWU5NWViZTA3NWFjMiIsIm5iZiI6MTcyODEzODI3OC4wMzksInN1YiI6IjY3MDE0YzI2NjdjNmZiMDlmZmY4NDkyMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qYj8mbzAsWKFi9zoCBzOTtPDyf99Y876sWzndwu6Grs",
-  /*/
+  api_key: "923db47c345416d96bce298f0c7d3f47", // api key de The Movie Database
   imgPath: "https://image.tmdb.org/t/p"
 };
 
