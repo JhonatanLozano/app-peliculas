@@ -1,0 +1,7 @@
+{
+  "name": "jhonatan.app.pelis",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

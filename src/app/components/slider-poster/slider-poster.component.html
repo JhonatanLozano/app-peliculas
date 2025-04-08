@@ -1,0 +1,11 @@
+<swiper-container #swiperPoster init="false">
+  @for (peli of peliculas; track $index) {
+
+  <swiper-slide (click)="verDetallePeli(peli.id)">
+    <ion-card>
+      <img [src]="peli.poster_path| imagen"/>
+    </ion-card>
+  </swiper-slide>
+
+  }
+</swiper-container>

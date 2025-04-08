@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Buscar Películas</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-searchbar placeholder="Escriba un título de película..." debounce="500" animated [value]="textoBuscar"
+      (ionInput)="buscar($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  @if(cargando) {
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <ion-spinner name="crescent"></ion-spinner>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  }
+
+  @if (arrPeliculas.length === 0) {
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h2>Ideas de Búsqueda</h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    @for (idea of ideasBusq; track $index) {
+    <ion-item (click)="clickIdea(idea);">
+      <ion-label color="primary">{{idea}}</ion-label>
+    </ion-item>
+    }
+  </ion-list>
+  }
+  @else {
+
+  <ion-grid>
+    <ion-row>
+      @for (peli of arrPeliculas; track $index) {
+      <ion-col size="6" sizeMd="3" sizeLg="3" sizeXl="2">
+
+        <ion-card (click)="verDetalle(peli.id)">
+          <ion-img [src]="peli.poster_path | imagen"></ion-img>
+          <ion-card-header>
+            <ion-card-title>{{peli.title}}</ion-card-title>
+            <ion-card-subtitle>{{ peli.release_date | date : 'YYYY' }}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+
+      </ion-col>
+      }
+    </ion-row>
+  </ion-grid>
+
+  }
+
+</ion-content>

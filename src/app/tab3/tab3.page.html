@@ -1,0 +1,26 @@
+<ion-content [fullscreen]="true">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>Favoritos</ion-col>
+    </ion-row>
+  </ion-grid>
+
+  @for (g of pelisXGenero; track $index) {
+    @if (g.peliculas.length > 0) {
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <h4>{{g.genero_name}}</h4>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <app-slider-poster
+            [peliculas]="g.peliculas"
+            (actualizarFav)="ionViewWillEnter()"
+        ></app-slider-poster>
+    }
+  }
+
+
+</ion-content>
